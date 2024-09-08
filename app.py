@@ -68,13 +68,13 @@ if page == "Home":
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.image("./sample/angelina_jolie.jpg", caption="Angelina Jolie", use_column_width=True)
+        st.image("./Sample/angelina_jolie.jpg", caption="Angelina Jolie", use_column_width=True)
 
     with col2:
-        st.image("./sample/brad_pitt.jpg", caption="Brad Pitt", use_column_width=True)
+        st.image("./Sample/brad_pitt.jpg", caption="Brad Pitt", use_column_width=True)
 
     with col3:
-        st.image("./sample/hugh_jackman.jpg", caption="Hugh Jackman", use_column_width=True)
+        st.image("./Sample/hugh_jackman.jpg", caption="Hugh Jackman", use_column_width=True)
 
     # File uploader for image
     uploaded_file = st.file_uploader('Upload an Image')
