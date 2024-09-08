@@ -65,7 +65,7 @@ if page == "Home":
 
     # Display sample images
     st.markdown('<h2 class="subheader">Sample Images for use</h2>', unsafe_allow_html=True)
-    col1, col2, col3, col4, col5 = st.columns(6)
+    col1, col2, col3, col4, col5 = st.columns(5)
 
     with col1:
         st.image("./Sample/angelina_jolie.jpg", caption="Angelina Jolie", use_column_width=True)
