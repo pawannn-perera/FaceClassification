@@ -63,6 +63,19 @@ if page == "Home":
         <p>The uploaded image should clearly show the face of the celebrity. For best results, make sure the image is well-lit and the face is clearly visible.</p>
     """, unsafe_allow_html=True)
 
+    # Display sample images
+    st.markdown('<h2 class="subheader">Sample Images</h2>', unsafe_allow_html=True)
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.image("sample/angelina_jolie.jpg", caption="Angelina Jolie", use_column_width=True)
+
+    with col2:
+        st.image("sample/brad_pitt.jpg", caption="Brad Pitt", use_column_width=True)
+
+    with col3:
+        st.image("sample/hugh_jackman.jpg", caption="Hugh Jackman", use_column_width=True)
+
     # File uploader for image
     uploaded_file = st.file_uploader('Upload an Image')
     if uploaded_file is not None:
