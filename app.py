@@ -65,7 +65,7 @@ if page == "Home":
 
     # Display sample images
     st.markdown('<h2 class="subheader">Sample Images for use</h2>', unsafe_allow_html=True)
-    col1, col2, col3, col4, col5 = st.columns(5)
+    col1, col2, col3, col4, col5 = st.columns(6)
 
     with col1:
         st.image("./Sample/angelina_jolie.jpg", caption="Angelina Jolie", use_column_width=True)
@@ -77,10 +77,10 @@ if page == "Home":
         st.image("./Sample/hugh_jackman.jpg", caption="Hugh Jackman", use_column_width=True)
 
     with col4:
-        st.image("./Sample/leonardo_dicaprio.jpg", caption="Hugh Jackman", use_column_width=True)
+        st.image("./Sample/leonardo_dicaprio.jpg", caption="Leonardo Dicaprio", use_column_width=True)
 
     with col4:
-        st.image("./Sample/johnny_depp.jpg", caption="Hugh Jackman", use_column_width=True)
+        st.image("./Sample/johnny_depp.jpg", caption="Johnny Depp", use_column_width=True)
 
     # File uploader for image
     uploaded_file = st.file_uploader('Upload an Image')
