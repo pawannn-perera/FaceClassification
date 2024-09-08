@@ -26,3 +26,5 @@ This fun and interactive web application allows users to upload images of celebr
 - **TensorFlow/Keras**: For loading and using the pre-trained deep learning model.
 - **Pillow**: For image processing.
 - **Python**: The core programming language used for building this app.
+
+- **strealit diploy link**: https://hollywoodcelebrity-imageclassification.streamlit.app/
