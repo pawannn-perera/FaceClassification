@@ -77,7 +77,7 @@ if page == "Home":
         st.image("./Sample/hugh_jackman.jpg", caption="Hugh Jackman", use_column_width=True)
 
     with col4:
-        st.image("./Sample/leonardo_dicaprio.jpg", caption="Leonardo Dicaprio", use_column_width=True)
+        st.image("./Sample/leonardo_dicaprio.jpg", caption="Leonardo DiCaprio", use_column_width=True)
 
     with col4:
         st.image("./Sample/johnny_depp.jpg", caption="Johnny Depp", use_column_width=True)
