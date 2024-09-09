@@ -25,7 +25,7 @@ st.markdown("""
         font-family: 'Helvetica', sans-serif;
     }
     .image-container {
-        display: list;
+        display: flex;
         justify-content: center;
         padding: 20px;
     }
