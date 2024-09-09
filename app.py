@@ -1,4 +1,17 @@
-# Custom CSS to improve aesthetics
+import os
+import keras
+import streamlit as st 
+import tensorflow as tf
+import numpy as np
+from tensorflow.keras.models import load_model
+from PIL import Image
+import io
+import pandas as pd
+
+# Streamlit page configuration
+st.set_page_config(page_title="Celebrity Image Classification", layout="wide")
+
+# Custom CSS to improve aesthetics, including sidebar styling
 st.markdown("""
     <style>
     .header {
@@ -33,7 +46,30 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Page navigation
+# Load the pre-trained model
+model = load_model('new_model.keras')
+
+# List of persons' names for prediction
+person_names = ['Angelina Jolie', 'Brad Pitt', 'Hugh Jackman', 'Johnny Depp', 'Leonardo DiCaprio']
+
+def classify_images(image):
+    # Open and preprocess the image for the model
+    input_image = Image.open(image).resize((100, 100))
+    input_image_array = np.array(input_image)
+    input_image_exp_dim = np.expand_dims(input_image_array, axis=0)
+
+    # Predict the class of the image
+    predictions = model.predict(input_image_exp_dim)
+    result = tf.nn.softmax(predictions[0])
+
+    # Prepare results as a dictionary for all classes
+    results_dict = {person_names[i]: round(float(result[i] * 100), 2) for i in range(len(person_names))}
+
+    # Get the most likely class and format the result
+    outcome = 'The Image belongs to "' + person_names[np.argmax(result)] + '" with a confidence score of "'+ str(np.max(result)*100)[:5] + '%"'
+    return outcome, results_dict
+
+# Page navigation through the sidebar
 page = st.sidebar.radio("Select a Page", ["Home", "About"])
 
 if page == "Home":
@@ -91,4 +127,3 @@ elif page == "About":
         <p>Upload an image of a celebrity, and the model will predict which celebrity the image belongs to, along with a confidence score. The app is designed to provide a fun and interactive way to see how well the model can recognize different celebrities.</p>
         <p>For best results, make sure the face in the image is clearly visible and well-lit. The model is trained to recognize these specific celebrities and may not perform as well with images of other people.</p>
     """, unsafe_allow_html=True)
-
