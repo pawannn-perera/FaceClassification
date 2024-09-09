@@ -8,10 +8,10 @@ from PIL import Image
 import io
 import pandas as pd
 
-# Streamlit page configuration
+# Set page configuration
 st.set_page_config(page_title="Celebrity Image Classification", layout="wide")
 
-# Custom CSS to improve aesthetics, including sidebar styling
+# Custom CSS to improve aesthetics
 st.markdown("""
     <style>
     .header {
@@ -30,26 +30,13 @@ st.markdown("""
         justify-content: center;
         padding: 20px;
     }
-    /* Style for sidebar */
-    .css-1d391kg {
-        background-color: #f0f4f7;
-        padding: 20px;
-    }
-    .css-1d391kg h2 {
-        color: #4B7BFF;
-        font-family: 'Helvetica', sans-serif;
-    }
-    .css-1d391kg .stRadio {
-        font-size: 16px;
-        color: #000;
-    }
     </style>
 """, unsafe_allow_html=True)
 
 # Load the pre-trained model
 model = load_model('new_model.keras')
 
-# List of persons' names for prediction
+# List of persons names for prediction
 person_names = ['Angelina Jolie', 'Brad Pitt', 'Hugh Jackman', 'Johnny Depp', 'Leonardo DiCaprio']
 
 def classify_images(image):
@@ -69,7 +56,7 @@ def classify_images(image):
     outcome = 'The Image belongs to "' + person_names[np.argmax(result)] + '" with a confidence score of "'+ str(np.max(result)*100)[:5] + '%"'
     return outcome, results_dict
 
-# Page navigation through the sidebar
+# Page navigation
 page = st.sidebar.radio("Select a Page", ["Home", "About"])
 
 if page == "Home":
@@ -80,22 +67,22 @@ if page == "Home":
     """, unsafe_allow_html=True)
 
     # Load and resize sample images
-sample_angelina = Image.open("./Sample/angelina_jolie.jpg").resize((250, 250))
-sample_brad = Image.open("./Sample/brad_pitt.jpg").resize((250, 250))
-sample_hugh = Image.open("./Sample/hugh_jackman.jpg").resize((250, 250))
+    sample_angelina = Image.open("./Sample/angelina_jolie.jpg").resize((250, 250))
+    sample_brad = Image.open("./Sample/brad_pitt.jpg").resize((250, 250))
+    sample_hugh = Image.open("./Sample/hugh_jackman.jpg").resize((250, 250))
 
-# Display sample images
-st.markdown('<h2 class="subheader">Sample Images for use</h2>', unsafe_allow_html=True)
-col1, col2, col3 = st.columns(3)
+    # Display sample images
+    st.markdown('<h2 class="subheader">Sample Images for use</h2>', unsafe_allow_html=True)
+    col1, col2, col3 = st.columns(3)
 
-with col1:
-    st.image(sample_angelina, caption="Angelina Jolie", use_column_width=True)
+    with col1:
+        st.image(sample_angelina, caption="Angelina Jolie", use_column_width=True)
 
-with col2:
-    st.image(sample_brad, caption="Brad Pitt", use_column_width=True)
+    with col2:
+        st.image(sample_brad, caption="Brad Pitt", use_column_width=True)
 
-with col3:
-    st.image(sample_hugh, caption="Hugh Jackman", use_column_width=True)
+    with col3:
+        st.image(sample_hugh, caption="Hugh Jackman", use_column_width=True)
 
     # File uploader for image
     uploaded_file = st.file_uploader('Upload an Image')
@@ -130,5 +117,4 @@ elif page == "About":
             <li>Leonardo DiCaprio</li>
         </ul>
         <p>Upload an image of a celebrity, and the model will predict which celebrity the image belongs to, along with a confidence score. The app is designed to provide a fun and interactive way to see how well the model can recognize different celebrities.</p>
-        <p>For best results, make sure the face in the image is clearly visible and well-lit. The model is trained to recognize these specific celebrities and may not perform as well with images of other people.</p>
-    """, unsafe_allow_html=True)
+        <p>For best results, make sure the face in the image is clearly visible and well-lit. The model is trained to recognize these specific celebrities and may not perform as well with images
