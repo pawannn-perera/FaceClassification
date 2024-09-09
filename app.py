@@ -57,7 +57,24 @@ def classify_images(image):
     return outcome, results_dict
 
 # Page navigation
-page = st.sidebar.radio("Select a Page", ["Home", "About"])
+# Using buttons for navigation
+st.sidebar.markdown("## Navigation")
+
+if st.sidebar.button("Home"):
+    page = "Home"
+elif st.sidebar.button("About"):
+    page = "About"
+else:
+    page = "Home"  # Default to Home
+
+# Render the pages based on button clicked
+if page == "Home":
+    st.title("Welcome to the Home Page!")
+    st.write("This is the main content of the Home page.")
+elif page == "About":
+    st.title("About This App")
+    st.write("Information about the Celebrity Image Classification app.")
+
 
 if page == "Home":
     # Home Page
