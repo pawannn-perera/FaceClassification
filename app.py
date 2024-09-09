@@ -8,10 +8,9 @@ from PIL import Image
 import io
 import pandas as pd
 
-# Set the page configuration to wide layout
-st.set_page_config(page_title="Celebrity Image Classification", layout="wide")
 
-# Custom CSS to improve aesthetics, including the image box
+st.set_page_config(page_title="Celebrity Image Classification", layout="wide")
+# Custom CSS to improve aesthetics
 st.markdown("""
     <style>
     .header {
@@ -29,13 +28,6 @@ st.markdown("""
         display: flex;
         justify-content: center;
         padding: 20px;
-    }
-    .image-box {
-        border: 2px solid #4B7BFF;
-        padding: 10px;
-        margin: 10px;
-        text-align: center;
-        box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
     }
     </style>
 """, unsafe_allow_html=True)
@@ -73,24 +65,19 @@ if page == "Home":
         <p>The uploaded image should clearly show the face of the celebrity. For best results, make sure the image is well-lit and the face is clearly visible.</p>
     """, unsafe_allow_html=True)
 
-    # Display sample images in a box
+    # Display sample images
     st.markdown('<h2 class="subheader">Sample Images for use</h2>', unsafe_allow_html=True)
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.markdown('<div class="image-box">', unsafe_allow_html=True)
         st.image("./Sample/angelina_jolie.jpg", caption="Angelina Jolie", use_column_width=True)
-        st.markdown('</div>', unsafe_allow_html=True)
 
     with col2:
-        st.markdown('<div class="image-box">', unsafe_allow_html=True)
         st.image("./Sample/brad_pitt.jpg", caption="Brad Pitt", use_column_width=True)
-        st.markdown('</div>', unsafe_allow_html=True)
 
     with col3:
-        st.markdown('<div class="image-box">', unsafe_allow_html=True)
         st.image("./Sample/hugh_jackman.jpg", caption="Hugh Jackman", use_column_width=True)
-        st.markdown('</div>', unsafe_allow_html=True)
+
 
     # File uploader for image
     uploaded_file = st.file_uploader('Upload an Image')
