@@ -70,8 +70,8 @@ if page == "Home":
     sample_angelina = Image.open("./Sample/angelina_jolie.jpg").resize((250, 250))
     sample_brad = Image.open("./Sample/brad_pitt.jpg").resize((250, 250))
     sample_hugh = Image.open("./Sample/hugh_jackman.jpg").resize((250, 250))
-    sample_hugh = Image.open("./Sample/johnny_depp.jpg").resize((250, 250))
-    sample_hugh = Image.open("./Sample/leonardo_dicaprio.jpg").resize((250, 250))
+    sample_johnny = Image.open("./Sample/johnny_depp.jpg").resize((250, 250))
+    sample_leonardo = Image.open("./Sample/leonardo_dicaprio.jpg").resize((250, 250))
 
     # Display sample images
     st.markdown('<h2 class="subheader">Sample Images for use</h2>', unsafe_allow_html=True)
@@ -87,10 +87,10 @@ if page == "Home":
         st.image(sample_hugh, caption="Hugh Jackman", use_column_width=True)
 
     with col4:
-        st.image(sample_hugh, caption="Johnny Depp", use_column_width=True)
+        st.image(sample_johnny, caption="Johnny Depp", use_column_width=True)
 
     with col5:
-        st.image(sample_hugh, caption="Leonardo DiCaprio", use_column_width=True)
+        st.image(sample_leonardo, caption="Leonardo DiCaprio", use_column_width=True)
 
     # File uploader for image
     uploaded_file = st.file_uploader('Upload an Image')
