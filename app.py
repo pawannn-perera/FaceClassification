@@ -58,7 +58,7 @@ def classify_images(image):
 
 # Page navigation
 
-tab1, tab2 = st.tabs(["Home", "About"])
+page = st.sidebar.selectbox("Select a Page", ["Home", "About"])
 
 if page == "Home":
     # Home Page
