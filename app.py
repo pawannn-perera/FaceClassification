@@ -117,4 +117,4 @@ elif page == "About":
             <li>Leonardo DiCaprio</li>
         </ul>
         <p>Upload an image of a celebrity, and the model will predict which celebrity the image belongs to, along with a confidence score. The app is designed to provide a fun and interactive way to see how well the model can recognize different celebrities.</p>
-        <p>For best results, make sure the face in the image is clearly visible and well-lit. The model is trained to recognize these specific celebrities and may not perform as well with images
+        <p>For best results, make sure the face in the image is clearly visible and well-lit. The model is trained to recognize these specific celebrities and may not perform as well with images. """)
