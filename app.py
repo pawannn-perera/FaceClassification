@@ -57,15 +57,8 @@ def classify_images(image):
     return outcome, results_dict
 
 # Page navigation
-# Using buttons for navigation
-st.sidebar.markdown("## Navigation")
 
-if st.sidebar.button("Home"):
-    page = "Home"
-elif st.sidebar.button("About"):
-    page = "About"
-else:
-    page = "Home"  # Default to Home
+page = st.sidebar.selectbox("Choose a page", ["Home", "About"])
 
 # Render the pages based on button clicked
 if page == "Home":
