@@ -58,16 +58,7 @@ def classify_images(image):
 
 # Page navigation
 
-page = st.sidebar.selectbox("Choose a page", ["Home", "About"])
-
-# Render the pages based on button clicked
-if page == "Home":
-    st.title("Welcome to the Home Page!")
-    st.write("This is the main content of the Home page.")
-elif page == "About":
-    st.title("About This App")
-    st.write("Information about the Celebrity Image Classification app.")
-
+tab1, tab2 = st.tabs(["Home", "About"])
 
 if page == "Home":
     # Home Page
