@@ -8,6 +8,8 @@ from PIL import Image
 import io
 import pandas as pd
 
+
+st.set_page_config(page_title="Celebrity Image Classification", layout="wide")
 # Custom CSS to improve aesthetics
 st.markdown("""
     <style>
