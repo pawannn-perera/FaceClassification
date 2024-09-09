@@ -101,7 +101,7 @@ elif page == "About":
     # About Page
     st.markdown('<h1 class="header">About This App</h1>', unsafe_allow_html=True)
     st.markdown("""
-        <p>This application uses a pre-trained deep learning model to classify images of celebrities into one of the following five categories:</p>
+        <p>This application classify images of celebrities into one of the following five categories:</p>
         <ul>
             <li>Angelina Jolie</li>
             <li>Brad Pitt</li>
