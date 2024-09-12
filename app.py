@@ -34,7 +34,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Load the pre-trained model
-model = load_model('simple_frozen_graph.pb')
+model = load_model('new_model.keras')
 
 # List of persons names for prediction
 person_names = ['Angelina Jolie', 'Brad Pitt', 'Hugh Jackman', 'Johnny Depp', 'Leonardo DiCaprio']
