@@ -1,5 +1,5 @@
 # Hollywood Celebrity Image Classification App
-This fun and interactive web application allows users to upload images of celebrities and get instant predictions about which Hollywood star the image resembles. The app uses a pre-trained deep learning model to classify images into one of five celebrity categories:
+This fun and interactive web application allows users to upload images of celebrities and get instant predictions about which Hollywood star the image resembles. The app use deep learning model to classify images into one of five celebrity categories:
 
  - Angelina Jolie
  - Brad Pitt
